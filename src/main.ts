@@ -1,6 +1,8 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+// main.ts
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module'; // Adjust path as per your project structure
+import { appConfig } from './app/app.config'; // Ensure correct path to app.config
+
+platformBrowserDynamic().bootstrapModule(AppModule, { providers: [{ provide: 'appConfig', useValue: appConfig }] })
+  .catch(err => console.error(err));

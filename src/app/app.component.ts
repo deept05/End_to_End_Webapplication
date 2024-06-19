@@ -1,13 +1,29 @@
+// app.component.ts
+
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'demoapp';
+  username: string = ''; // Property to bind to the username input field
+  password: string = ''; // Property to bind to the password input field
+
+  login() {
+    // Handle form submission logic here
+    if (this.username.trim() === '') {
+      alert('Please enter a username.');
+      return;
+    }
+
+    if (this.password.trim() === '') {
+      alert('Please enter a password.');
+      return;
+    }
+
+    // Example: Redirect to a new page or perform some action after login
+    alert(`Welcome, ${this.username}!`);
+  }
 }

@@ -1,8 +1,7 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+// app.config.ts
 
-import { routes } from './app.routes';
-
-export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+export const appConfig = {
+  // Define your application configuration here
+  apiUrl: 'http://localhost:3000/api', // Example API URL
+  environment: 'development' // Example environment setting
 };
